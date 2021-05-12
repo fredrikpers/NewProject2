@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: lightgrey;" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentController">
+   <children>
+      <AnchorPane prefHeight="606.0" prefWidth="292.0" style="-fx-background-color: lightgrey;">
+         <children>
+            <ImageView fx:id="brandingImageView" fitHeight="256.0" fitWidth="261.0" layoutX="18.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="292.0" prefHeight="606.0" prefWidth="309.0" style="-fx-background-color: #a9a9a9 #a9a9a9 #a9a9a9 #a9a9a9;">
+         <children>
+            <Button fx:id="yourCoursesButton" layoutX="46.0" layoutY="140.0" mnemonicParsing="false" onAction="#createCourseForm" prefHeight="51.0" prefWidth="194.0" style="-fx-background-color: E96151;" text="Your Courses" textFill="#0d0c0c">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="createMeetingButton" layoutX="46.0" layoutY="243.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="194.0" style="-fx-background-color: E96151;" text="Create Meeting" textFill="#0d0c0c">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="joinMeetingButton" layoutX="46.0" layoutY="349.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="194.0" style="-fx-background-color: E96151;" text="Join Meeting" textFill="#0d0c0c">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="cancelButton" layoutX="46.0" layoutY="446.0" mnemonicParsing="false" onAction="#cancelButton" prefHeight="51.0" prefWidth="194.0" style="-fx-background-color: E96151;" text="Cancel" textFill="#0d0c0c">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Label fx:id="userLabel" layoutX="65.0" layoutY="46.0">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

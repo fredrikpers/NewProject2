@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="batik:batik:1.5" type="repository">
+    <properties maven-id="batik:batik:1.5" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/batik/batik/1.5/batik-1.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
