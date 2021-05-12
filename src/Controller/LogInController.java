@@ -79,6 +79,11 @@ public class LogInController implements Initializable {
         if(database.userExistsLogIn(usernameTextField.getText())){
             user = database.getUser(usernameTextField.getText());
         }
+        else{
+            loginMessageLabel.setText("Invalid login. Please try again!");
+            loginMessageLabel.setTextFill(Color.RED);
+            return;
+        }
         System.out.println(Arrays.toString(user.userDataToArray(user)));
 
         if(!validateLogin(user)) {
