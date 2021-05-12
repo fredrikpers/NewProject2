@@ -92,8 +92,6 @@ public class LogInController implements Initializable {
             return;
         }
 
-        System.out.println("hello");
-
         loginMessageLabel.setText("Logged in correctly!");
         loginMessageLabel.setTextFill(Color.GREEN);
 
