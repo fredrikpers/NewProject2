@@ -172,7 +172,7 @@ public class User {
         }
     }
 
-    public boolean validatePassword(String password) {
+    public static boolean validatePassword(String password) {
         return (password != null && Pattern.matches(VALID_PASSWORD_REGEX, password));
     }
 

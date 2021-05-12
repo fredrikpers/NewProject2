@@ -3,7 +3,6 @@ package Controller;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -32,8 +31,6 @@ import java.util.concurrent.TimeUnit;
 
 public class LogInController implements Initializable {
 
-    DatabaseHandler database;
-    User user;
     @FXML
     private Button registerButton;
     @FXML
@@ -49,6 +46,9 @@ public class LogInController implements Initializable {
     @FXML
     private Button loginButton;
 
+    private DatabaseHandler database;
+    private User user;
+
     public LogInController() throws IOException {
         this.database = new DatabaseHandler();
         this.user = new User();
@@ -61,6 +61,13 @@ public class LogInController implements Initializable {
         brandingImageView.setImage(brandingImage);
     }
 
+    /**
+     * Login Button onclick
+     * @param event ActionEvent
+     * @throws IOException Exception
+     * @throws InterruptedException Exception
+     * Maybe move some of this to a model class called "login"?
+     */
     public void loginButtonOnAction(ActionEvent event) throws IOException, InterruptedException {
 
         if(usernameTextField.getText().isBlank() || passwordTestField.getText().isBlank()){
@@ -97,16 +104,32 @@ public class LogInController implements Initializable {
         stage.close();
     }
 
+    /**
+     * Registers onclick register Button
+     * @author Fredrik Pettersson
+     * @param event ActionEvent
+     */
     public void registerButton(ActionEvent event){
         createAccountForm();
     }
 
+    /**
+     * Validates login
+     * @param user user
+     * @return true if password is OK else false
+     * @throws IOException exception
+     * Maybe move some of this to a model class called "login"?
+     */
     public boolean validateLogin(User user) throws IOException {
         if(user.checkPassword(user, passwordTestField.getText()))
             return true;
         return false;
     }
 
+    /**
+     * Creates the AccountForm
+     * @author Fredrik Pettersson
+     */
     public void createAccountForm(){
         try{
             Parent root = FXMLLoader.load(getClass().getResource("/View/register.fxml"));
@@ -121,7 +144,10 @@ public class LogInController implements Initializable {
         }
     }
 
-
+    /**
+     * Creates the User profile Form
+     * @author Fredrik Pettersson
+     */
     public void createUserForm(){
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/View/student.fxml"));
@@ -139,5 +165,7 @@ public class LogInController implements Initializable {
             e.getCause();
         }
     }
+
+
 
 }

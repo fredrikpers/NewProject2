@@ -37,11 +37,22 @@ public class RegisterController implements Initializable {
     @FXML
     private Button registerButton;
 
+    /**
+     * RegisterController construcytor
+     * @throws IOException Exception
+     * @author Fredrik Pettersson
+     */
     public RegisterController() throws IOException {
         this.database = new DatabaseHandler();
     }
 
 
+    /**
+     * Initializes the picture on the View
+     * @param url url of the picture
+     * @param resourceBundle resourceBundle
+     * @author Fredrik Pettersson
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         File brandingFile = new File("images/logo.png");
@@ -49,6 +60,12 @@ public class RegisterController implements Initializable {
         brandingImageView.setImage(brandingImage);
     }
 
+    /**
+     * Register button onClick
+     * @throws IOException exception
+     * @author Fredrik Pettersson
+     * Maybe move all logic to a new class "register" ?
+     */
     public void registerNewUser() throws IOException {
 
         if(usernameTextField.getText().isBlank() || passwordTextField.getText().isBlank() || emailTextField.getText().isBlank()){
@@ -91,13 +108,23 @@ public class RegisterController implements Initializable {
         stage.close();
     }
 
+    /**
+     * Creates new user
+     * @param user user
+     * @author Fredrik Pettersson
+     */
     public void createUser(User user){
         user.setPassword(passwordTextField.getText());
         user.setEmail(emailTextField.getText());
     }
 
-    public void addUserToDatabase(User user) throws IOException {
-
+    /**
+     * Adds user to DB
+     * @param user user
+     * @author Fredrik Pettersson
+     * Maybe move this to "register" in model?
+     */
+    public void addUserToDatabase(User user) {
         try {
             database.addUser(user);
         } catch (IOException e) {
